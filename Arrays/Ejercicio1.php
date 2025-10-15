@@ -1,30 +1,28 @@
 <?php
-//Escribe un programa que genere 20 numeros aleatorios entre 0-100
-//y que lo almacenene en un array mostrar los numeros pares delante 
-$miarray = array();
-$arraypar=array();
-$arrayimpar=array();
+// de forma aleatoria  obten 10 nombres de personas y otros 10 de apellidos 
+// crea un array asociativo asociativo con los nombres y apellidos y muestralo por pantalla
+$miarraynombres=["Maria", "Estrella","Adrian","Mario","Ruben","Cristina","Jesus","Alberto","Lucia","Ivan "];
+$miarrayapellidos=["Chamorro","Gordillo","Palo","Rubio","Garcia","Rodríguez","Díaz","Martínez","Bermudez","Real"];
 
-for($i=0;$i<=20;$i++){
-    $num=rand(1,100);
-  array_push($miarray,$num);
-  }
-  for($i=0;$i<=20;$i++){  //count(miarray) funcion que determina el ultimo 
-    if($miarray[$i]%2==0){
-        array_push($arraypar,$miarray[$i]);
-  
-    }else{
-         array_push($arrayimpar,$miarray[$i]);
-     
-    }
-  }
-  for($i=0;$i<count($arraypar);$i++){
-    echo " Los numeros pares $arraypar[$i]<br>";
-  }
-  
-for($i=0;$i<count($arrayimpar);$i++){
-  echo"  Los numeros impares $arrayimpar[$i]<br>";
+$arrayasociativo=[];   //$arrayasociativo=array(20)
+
+
+
+for($i=0;$i<10;$i++){
+    $nombretemp=$miarraynombres[rand(0,count($miarraynombres)-1)];
+    //Elimina el nombre selecionado para no repetir
+    //Array_splice elimina(arrayparaeliminar,posicion,nºelementos)
+    //Array_search devuelve la posicion del elemento buscado 
+    array_splice($miarraynombres,array_search($nombretemp,$miarraynombres),1);
+    $apellidostemp=$miarrayapellidos[rand(0,count($miarrayapellidos)-1)];
+    array_splice($miarrayapellidos,array_search($apellidostemp,$miarrayapellidos),1);
+    $arrayasociativo[$nombretemp]=$apellidostemp;
+}
+
+foreach($arrayasociativo as $nombretemp => $apellidostemp){
+    echo "Nombre $nombretemp : apellidos: $apellidostemp <br>";
 }
 
 
+//shuffle($miarray) funcion que baraja el array 
 ?>
