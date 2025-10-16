@@ -12,7 +12,7 @@ $menor=100;
 
  for($i=0;$i<33;$i++){                 //$mayor = max($miarray);
     $miarray[$i]=rand(0,100);          //$menor = min($miarray);
-    if($miarray[$i]>$mayor){           //$media = array_sum($miarray) / count($miarray)
+    if($miarray[$i]>$mayor){           //$medida=array_sum($miarray)/count($miarray)
         $mayor=$miarray[$i];
     }if($miarray[$i]<$menor){
         $menor=$miarray[$i];
