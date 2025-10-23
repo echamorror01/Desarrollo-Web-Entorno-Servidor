@@ -10,19 +10,41 @@ Sota:2 puntos
 Cartas del 2 al 7: 0puntos
 */
 
-$barajaespañola=[
-"oros"=>[ 1=> "As",2=>2 ,3=>3,4=>4,5=>5,6=>6,7=>7,10=>"Sota",11=>"Caballo",12=>"Rey"
 
-],
- "copas"=>[ 1=> "As",2=>2 ,3=>3,4=>4,5=>5,6=>6,7=>7,10=>"Sota",11=>"Caballo",12=>"Rey"
-],
- "espadas"=>[ 1=> "As",2=>2 ,3=>3,4=>4,5=>5,6=>6,7=>7,10=>"Sota",11=>"Caballo",12=>"Rey"
-],
- "bastos"=>[ 1=> "As",2=>2 ,3=>3,4=>4,5=>5,6=>6,7=>7,10=>"Sota",11=>"Caballo",12=>"Rey"
- ]
+$puntos=[
+    1=>11,
+    2=>0,
+    3=>10,
+    4=>0,
+    5=>0,
+    6=>0,
+    7=>0,
+    10=>2,
+    11=>3,
+    12=>4
 ];
+$arraysinrepetir=[];
+$palos=["oro","copas","espada","bastos"];
+$total=0;
 
-print_r($barajaespañola)
+echo "<h2>Cartas elegidas:</h2>";
 
+while(count($arraysinrepetir) <10){
+    $numeros=array_rand($puntos);//clave
+    $palo=$palos[array_rand($palos)]; //para que nos devuelva oro,copas...
+    $carta = $numeros . $palo;
+    if(!in_array($carta,$arraysinrepetir)){  //sin en el array no esta 
+        array_push($arraysinrepetir,$carta);
+        $total+=$puntos[$numeros]; //me da la puntuacion(valor)
+        echo" $numeros de $palo ( $puntos[$numeros]  puntos)";
+
+        echo '<img src="img/'.$numeros.$palo.'.png"><br>';
+    }
+    echo '<div style="display: flex; flex-wrap: wrap;">';  // Flexbox container
+    
+        
+    }
+
+echo"<h2>Total de puntos : $total  </h2>";
 
 ?>
