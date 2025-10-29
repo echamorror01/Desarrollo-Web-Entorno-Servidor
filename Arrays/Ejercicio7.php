@@ -23,8 +23,9 @@ $puntos=[
     11=>3,
     12=>4
 ];
-$arraysinrepetir=[];
 $palos=["oro","copas","espada","bastos"];
+$arraysinrepetir=[];
+
 $total=0;
 
 echo "<h2>Cartas elegidas:</h2>";
@@ -36,13 +37,14 @@ while(count($arraysinrepetir) <10){
     if(!in_array($carta,$arraysinrepetir)){  //sin en el array no esta 
         array_push($arraysinrepetir,$carta);
         $total+=$puntos[$numeros]; //me da la puntuacion(valor)
-        echo" $numeros de $palo ( $puntos[$numeros]  puntos)";
-
-        echo '<img src="img/'.$numeros.$palo.'.png"><br>';
-    }
-    echo '<div style="display: flex; flex-wrap: wrap;">';  // Flexbox container
-    
+        echo '<div style="display: inline-block; margin: 10px; text-align: center;">';   // para darle estilo a las cartas
+        echo"<p> $numeros de $palo ( $puntos[$numeros]  puntos)</p>";
         
+        echo '<img src="img/'.$numeros.$palo.'.png"alt="Carta" style="width: 80px; height: auto;">';
+    }
+    
+    
+      echo "</div>";   
     }
 
 echo"<h2>Total de puntos : $total  </h2>";
