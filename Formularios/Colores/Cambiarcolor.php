@@ -11,7 +11,7 @@
     style= "background-color: 
 <?php
 //cambiar de color la pagina 
-$opciones=$_GET["opciones"];
+$opciones=$_GET["opciones"] ?? "opcion1";    // valor por defecto o @delante de opciones 
 
 switch ($opciones){
     case "opcion1":
