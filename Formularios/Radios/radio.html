@@ -8,21 +8,21 @@
 
 </head>
 <body>
-    <form action="checkbox.php" method="get">
+    <form action="radio.php" method="get">
         <table class="bordes">
             <tr>
-                <th colspan="2" class="color">Uso de checkbox</th>
+                <th colspan="2" class="color">Uso de radio</th>
             </tr>
         <tr>
             <td><label for="name">Nombre</label></td>
             <td><input type="text" name="nombre"></td>
         </tr>
         <tr>   
-            <td><label for="name">Deportes</label></td>  <!--El name tiene que ser igual  checked para que ponga el tik por defecto-->
-            <td><input type="checkbox" name="deporte[]" value="Futbol" checked >Futbol<br>
-                <input type="checkbox" name="deporte[]" value="Basket" checked>Basket<br>
-                <input type="checkbox" name="deporte[]" value="Tenis">Tenis<br>
-                <input type="checkbox" name="deporte[]" value="Voley">Voley<br>
+            <td><label for="name">Estudio</label></td>  <!--El name tiene que ser igual  checked para que ponga el tik por defecto-->
+            <td><input type="radio" name="estudios[]" value="No estudios">No tiene estudios<br>
+                <input type="radio" name="estudios[]" value="Estudios primarios">Estudios primarios<br>
+                <input type="radio" name="estudios[]" value="Estudios secundarios" checked>Estudios secundarios<br>
+                
                  </td>  <!--cuidado con los[] porque es un array -->
         </tr>
          <tr>
