@@ -1,0 +1,20 @@
+.centrar{
+    text-align: center;
+   
+}
+body{
+    background-color: yellow;
+
+     text-align: center;
+}
+.negro{
+    background-color: black;
+    color: white;
+}
+.contenedor{
+    border: 2px solid black;
+    display: inline-block;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: yellow; 
+}

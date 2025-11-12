@@ -1,6 +1,5 @@
-
 th{
-    color: blue;
+    color:black;
 }
 .bordes{
     border: 2px solid black;
@@ -14,6 +13,14 @@ th{
 body{
     background-color: yellow;
 }
+.verde{
+background-color: rgb(33, 180, 65);
+text-align: center;
+}
+.azul{
+background-color: aqua;
+text-align: center;
+}
 h2{
-    color: black;
+    text-align: center;
 }
