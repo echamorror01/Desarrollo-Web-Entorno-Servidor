@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+    <form action="radio.php" method="get">  <!---Si en action pongo $_SERVER['PHP_SELF'] FUNCIONA IGUAL-->
+        <table class="bordes">
+            <tr>
+                <th colspan="2" class="color">Uso de radio</th>
+            </tr>
+        <tr>
+            <td><label for="name">Nombre</label></td>
+            <td><input type="text" name="nombre"></td>
+        </tr>
+        <tr>   
+            <td><label for="name">Estudio</label></td>  <!--El name tiene que ser igual  checked para que ponga el tik por defecto-->
+            <td><input type="radio" name="estudios[]" value="No estudios">No tiene estudios<br>
+                <input type="radio" name="estudios[]" value="Estudios primarios">Estudios primarios<br>
+                <input type="radio" name="estudios[]" value="Estudios secundarios" checked>Estudios secundarios<br>
+                
+                 </td>  <!--cuidado con los[] porque es un array -->
+        </tr>
+         <tr>
+            <td colspan="2"  style="text-align:center;">
+                <input type="submit" value="Enviar">
+            </td> 
+         </tr>
+         </table>
+        
+    </form>
+</body>
+</html>

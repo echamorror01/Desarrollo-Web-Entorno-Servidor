@@ -1,0 +1,26 @@
+th{
+    color:black;
+}
+.bordes{
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin: 40px auto;
+}
+.bordes td, .bordes tr{
+ border: 1px solid black; /* esto agrega los bordes a las celdas */
+    padding: 5px;
+}
+body{
+    background-color: yellow;
+}
+.verde{
+background-color: rgb(33, 180, 65);
+text-align: center;
+}
+.azul{
+background-color: aqua;
+text-align: center;
+}
+h2{
+    text-align: center;
+}
