@@ -33,10 +33,10 @@ while(count($arraysinrepetir) <10){
     $numeros=array_rand($puntos);//clave
     $palo=$palos[array_rand($palos)]; //para que nos devuelva oro,copas...
     $carta = $numeros . $palo;
-    if(!in_array($carta,$arraysinrepetir)){  //sin en el array no esta 
+    if(!in_array($carta,$arraysinrepetir)){  //sin en el array no esta la carta
         array_push($arraysinrepetir,$carta);
         $total+=$puntos[$numeros]; //me da la puntuacion(valor)
-        echo" $numeros de $palo ( $puntos[$numeros]  puntos)";
+        echo" $numeros de $palo ( $puntos[$numeros]  puntos)";  //el numero 1 de oro tiene 11 puntos
 
         echo '<img src="img/'.$numeros.$palo.'.png"><br>';
     }
