@@ -1,3 +1,4 @@
+
 <?php
 //Condicionales
 
@@ -7,6 +8,8 @@ echo'<div class="bordes">';
 
 $usuario=$_GET["usuario"];
 $contraseña=$_GET["contraseña"];
+
+
 
 if($usuario=="Juan"|| $usuario=="Beatriz" || $usuario=="Laura" || $usuario=="Elena"){
     echo"Estas dentro del sistema";
