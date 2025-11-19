@@ -1,0 +1,13 @@
+.bordes{
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin: 40px auto;
+    background-color: yellow;
+}
+.bordes td, .bordes tr{
+ border: 1px solid black; /* esto agrega los bordes a las celdas */
+    padding: 5px;
+}
+.centrado{
+    text-align: center;
+}
