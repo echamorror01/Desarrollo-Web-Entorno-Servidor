@@ -1,6 +1,6 @@
 .bordes{
     border: 2px solid black;
-    border-collapse: collapse;
+    border-collapse: collapse; /* une todos los bordes de la tabla*/
     margin: 40px auto;
     background-color: yellow;
 }
