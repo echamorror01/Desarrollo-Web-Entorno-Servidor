@@ -1,0 +1,42 @@
+Nombre: estrella
+Apellidos: Chamorro Real
+Sexo: mujer
+Fecha: 2025-11-05
+Módulos: Array
+Comentarios: Administraccion
+-------------------------------
+Nombre: estrella
+Apellidos: Chamorro Real
+Sexo: 
+Fecha: 2025-11-05
+Módulos: Array
+Comentarios: Administraccion
+-------------------------------
+Nombre: Maria
+Apellidos: Chamorro Real
+Sexo: mujer
+Fecha: 2025-11-05
+Módulos: Lenguaje, Gestion, Lenguajem
+Comentarios: Administraccion
+-------------------------------
+Nombre: Lucia
+Apellidos: Galea Tejada
+Sexo: mujer
+Fecha: 2025-10-30
+Módulos: Lenguaje, Despliegue, Iniciativa, Proyecto
+Comentarios: Matematicas
+-------------------------------
+Nombre: Lucia
+Apellidos: Galea Tejada
+Sexo: 
+Fecha: 2025-10-30
+Módulos: Lenguaje, Gestion, Lenguajem
+Comentarios: Administraccion
+-------------------------------
+Nombre: Lucia
+Apellidos: Galea Tejada
+Sexo: 
+Fecha: 2025-10-30
+Módulos: Entorno
+Comentarios: dd
+-------------------------------

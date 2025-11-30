@@ -1,0 +1,28 @@
+.formulario{
+    font-family: Arial, sans-serif;
+    font-weight: bold; /* Mantener negrita en todo el texto */
+}
+
+.formulario input[type="checkbox"] {
+
+
+ font-weight: normal;  /* Anula la negrita solo en los checkboxes */
+}
+   /* Si el texto dentro de la tabla sigue en negrita, anula la negrita dentro de la tabla */
+.formulario table td {
+    font-weight: normal;
+}
+
+
+.formulario button {
+    background-color: #0f160f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.formulario button:hover {
+    background-color: #0f160f;
+}

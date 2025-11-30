@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel=
+    "stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="formulario">
+    <form action="formulario.php" method="get">
+        <h4>
+            Ejemplo de formulario. Matrícula de DAW 
+            <span style="float: right;">Estrella Chamorro Real</span>
+            </h4>
+       
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre"  pattern="[A-Za-záéíóúÁÉÍÓÚñÑ ]+" 
+         title="Solo letras sin tildes, ñ ni caracteres especiales">
+        <label for="apellidos">Apellidos</label>
+        <input type="text" name="apellidos">
+        <label for="sexo">Sexo</label>
+        <input type="radio" name="sexo" value="hombre">H
+         <input type="radio" name="sexo" value="mujer">M
+         <br>
+         <label for="fecha">Fecha de nacimiento</label>
+         <input type="date" name="fecha">
+          <table >
+         
+            <tr>
+                <th> Escoge los modulos en los que te matriculas </th>
+            </tr>
+    
+        <tr>   
+            <td><input type="checkbox" name="modulos[]" value="Lenguaje" >Lenguajes de programación</td>
+             <td><input type="checkbox" name="modulos[]" value="Programacion" >Programación Entorno Cliente</td>
+        </tr>
+        <tr>   
+            <td><input type="checkbox" name="modulos[]" value="Gestion" >Gestión de Base de Datos</td>
+             <td><input type="checkbox" name="modulos[]" value="Program" >Programación entorno Servidor</td>
+        </tr>
+        <tr>   
+            <td><input type="checkbox" name="modulos[]" value="Lenguajem" >Lenguaje de Marcas y Sistema de Gestión Empresarial</td>
+             <td><input type="checkbox" name="modulos[]" value="Diseño" >Diseño de Interfaces</td>
+        </tr>
+          <tr>   
+            <td><input type="checkbox" name="modulos[]" value="Entorno" >Entorno de Desarrollo</td>
+             <td><input type="checkbox" name="modulos[]" value="Despliegue" >Despliegue de interfaces</td>
+        </tr> 
+         <tr>   
+            
+            <td><input type="checkbox" name="modulos[]" value="Sistema" >Sistema de informacion</td>
+             <td><input type="checkbox" name="modulos[]" value="Iniciativa" >Iniciativa Empresa Emprendedora</td>
+        </tr>         
+         <tr>   
+            <td><input type="checkbox" name="modulos[]" value="Formacion" >Formacion y Orientacion Laboral</td>
+             <td><input type="checkbox" name="modulos[]" value="Proyecto" >Proyecto de Desarrollo de Aplicaciones Web </td>
+        </tr>      
+        </table>
+        <br>
+        
+        <label for="comentarios">Estudios previos</label><br>
+        <textarea name="comentarios" id="comentarios"></textarea><br>
+         <button type="submit" name="accion" value="Grabar">Grabar</button>
+         <button type="reset" name="accion" value="Restablecer">Restablecer</button>
+         <button type="submit" name="accion" value="Ver contenido">Ver contenido </button>       
+        <br>
+        <p>Pulse el botón de "Grabar" para formalizar la matrícula</p>
+        <p>Pulse el botón de "Restablecer" para limpiar el formulario</p>
+        <p>Pulse el botón de "Ver contenido" para mostrar contenido archivo  </p>
+    </form>
+    </div>
+</body>
+</html>
