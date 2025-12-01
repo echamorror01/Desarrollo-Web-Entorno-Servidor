@@ -17,48 +17,86 @@ if (isset($_GET["accion"]) && $_GET["accion"] == "Grabar") {
 
     $comentarios = isset($_GET["comentarios"]) ? $_GET["comentarios"] : '';
 
-    
-    $archivo = fopen("datosEjercicio.txt", "a+b");// la a escribe y lee y no borra el contenido 
-    
-    if ($archivo) {
-        fwrite($archivo, "Nombre: " . $nombre . PHP_EOL);  // Salto de línea
-        fwrite($archivo, "Apellidos: " . $apellidos . PHP_EOL);
-        fwrite($archivo, "Sexo: " . $sexo . PHP_EOL);
-        fwrite($archivo, "Fecha: " . $fecha . PHP_EOL);
-        fwrite($archivo, "Módulos: " . $modulos . PHP_EOL);
-        fwrite($archivo, "Comentarios: " . $comentarios . PHP_EOL);
-        fwrite($archivo, "-------------------------------" . PHP_EOL);  //para separar los datos de los demas
+    $usuario=[
+        "Nombre"=>$nombre,
+        "Apellidos"=>$apellidos,
+        "Sexo"=>$sexo,
+        "Fecha"=>$fecha,
+        "Modulos"=>$modulos,
+    ];
 
-        // Cerramos el archivo
-        fclose($archivo);
-        echo "Datos grabados con éxito";
+    // Convertir array a JSON
+    $json = json_encode($usuario, JSON_UNESCAPED_UNICODE);
+    $archivo = fopen("datosEjercicio.txt", "a+b");
+
+    if ($archivo) {
+        fwrite($archivo, $json . PHP_EOL); // Escribir línea + salto de línea
+        fclose($archivo); // Cerrar archivo
+        echo "Usuario guardado correctamente";
     } else {
-       
-        echo "Error";
+        echo "Error al abrir el archivo.";
     }
-    
 // Ver el contenido de todo el archivo (leer)
 }elseif(isset($_GET["accion"]) && $_GET["accion"] == "Ver contenido"){
-     $archivo = fopen("datosEjercicio.txt", "rb"); //modo lectura
-    if($archivo){
-        while(feof($archivo)==false){
-        $linea=fgets($archivo);
-        if ($linea !== false) {
-                echo nl2br($linea);
-            }
-     }
-     fclose($archivo);
-    }else{
-        echo "No se puede abrir el archivo ";
-    }
-     
-}else{
-    echo "No se ha recibido ninguna acción ";
+
+ 
+if((leercontenido())){
+    echo'<pre>';   //para respetar la estructura
+    print_r(leercontenido());
+    echo'</pre>';
+}
+else{
+    echo "No se pudo abrir el archivo para lectura.";
+}
+// Ordenar por nombre  
+}elseif(isset($_GET["accion"]) && $_GET["accion"] == "Ordenar por nombre"){
+if((leercontenido())){
+   $array = leercontenido();
+
+if ($array) {
+    usort($array, function($a, $b) {  // ordenar 
+        return strcmp($a['Nombre'], $b['Nombre']);  //strcmp va comparando una cadena con otra 
+    });
+
+    echo '<pre>';
+    print_r($array);
+    echo '</pre>';
+} else {
+    echo "No se pudo abrir el archivo para lectura.";
+}
+}
+else{
+    echo "No se pudo abrir el archivo para lectura.";
+}
+
+ }else{
+ echo "No se ha recibido ninguna acción ";
 }
 
 
 
 
+
+
+function leercontenido(){
+    $usuarios=[];
+// Abrimos el archivo en modo lectura ("r")
+$archivo = fopen("datosEjercicio.txt", "r");
+if ($archivo) {
+    // Leemos línea por línea hasta el final del archivo
+    while (($linea = fgets($archivo)) !== false) {
+       // $linea = trim($linea); // Eliminar saltos de línea esto no hace falta pero por si acaso 
+        if (!empty($linea)) {
+            $usuarios[] = json_decode($linea, true); // Convertir JSON a array asociativo
+        }
+    }
+    fclose($archivo); // Cerramos el archivo
+    return $usuarios;
+} else {
+   return false;
+}
+    
+}
 
 
 
