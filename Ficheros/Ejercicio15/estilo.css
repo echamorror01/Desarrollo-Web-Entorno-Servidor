@@ -1,0 +1,16 @@
+@charset "ISO-8859-1";
+div.centrar_tabla{
+	text-align: center;
+}
+div.centrar_tabla table {
+	width: 500px;
+	margin: 0 auto;
+	text-align: left;
+	background-color:#FFC;
+}
+td,th{
+	text-align: center;
+}
+table,tr,td{
+	border: 3px solid aqua;
+}

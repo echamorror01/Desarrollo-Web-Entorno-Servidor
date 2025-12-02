@@ -12,15 +12,30 @@
     <h2>Introducir contenido</h2>
    <label for="contenido">Introducir contenido</label><br>
    <input type="text" name="contenido" id="contenido" placeholder="Teclee el contenido"  ><br>
+     <a href="?eliminar=true">Eliminar archivo del texto</a><br>
+
    <label for="contnual">Desea continuar¿(S/N)?</label><br>
     <input type="submit" name="accion" value="Si">
     <input type="submit" name="accion" value="No">
     </form>
      </div>
 
+     
 
 
 <?php
+//Eliminar
+if (isset($_GET['eliminar']) && $_GET['eliminar'] == 'true') {
+    // Eliminar el archivo
+    if (file_exists("datosEjercicio.txt")) {
+        unlink("datosEjercicio.txt");  // Elimina el archivo
+        echo "Archivo eliminado.";
+    } else {
+        echo "El archivo no existe.";
+    }
+    // Detener la ejecución para que no se procesen más acciones
+    exit;
+}
 //Capturar los datos  
 $contenido=isset($_GET["contenido"]) ? $_GET["contenido"] : " ";
 $accion=isset($_GET["accion"]) ? $_GET["accion"] : " ";

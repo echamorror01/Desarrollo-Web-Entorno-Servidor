@@ -11,57 +11,60 @@ No hay jugador con ese número o Jugador eliminado. (Quedan X jugadores)
 Al final, se mostrará el jugador ganador y el número del jugador que lo tiene.*/
 
 //Aqui aginamos a cada jugador un numero de boleto 
-$miarray=[];
-for($i=0;$i<10;$i++){
-    $boleto= rand(1,100);
-    //para que no se repitan 
-while(in_array($boleto,$miarray)){ //si el numero ya está en el array se genera otro 
-    $boleto= rand(1,100);
 
+$jugadores = ["jugador1", "jugador2", "jugador3", "jugador4", "jugador5", "jugador6", "jugador7", "jugador8", "jugador9", "jugador10"];
+$numeros = [];
+
+//Relleno el array de números:
+
+while (count($numeros) < 10) {
+    $num = rand(1, 100);
+    if (!in_array($num, $numeros)) {
+        $numeros[] = $num;
+    }
 }
-    $miarray["jugador" . ($i + 1 )]=$boleto;
-}
-echo "Números asignados a los jugadores : <br>";
-print_r($miarray);
 
-//función
-function jugar(){
-    global $miarray; //lo usamos global para que me sirva
-    $numerosExtraidos= [];
-    $jugadoresrestantes=count($miarray); //contador de jugadores
-     while($jugadoresrestantes>1){
-        $numeroExtraido=rand(1,100); // extraemos el numero 
-        echo "Numero extraido $numeroExtraido <br>";
+//Asigno un número a cada jugador
+$jugadorNumeros = array_combine($jugadores, $numeros);
 
-        if(!in_array($numeroExtraido,$numerosExtraidos)){ // si en el array no está el numero lo extraemos 
-            $numerosExtraidos[]=$numeroExtraido;
-            $jugadoreliminado=null;
+//Mostrar
+echo "<pre>";
+print_r($jugadorNumeros);
+echo "</pre>";
+$numerosExtraidos = [];
 
-            foreach($miarray as $jugador => $numero){
-                if($numero==$numeroExtraido){ // si el numero coincide hya que buscare
-                    $jugadoreliminado=$jugador;
-                    break;
-                }
-            }
-            if($jugadoreliminado!==null){ // significa que hemos encontrado un jugador y hay que eliminarlo 
-                unset($miarray[$jugadoreliminado]);// eliminamos el jugador
-                echo "Jugador $jugadoreliminado eliminado (Numero: $numeroExtraido) <br>";
-                 $jugadoresrestantes = count($miarray);
-            }else{
-                echo "No hay jugador con ese numero <br>";
-              
+while (count($jugadorNumeros) > 1) {
+    $numBombo = rand(1, 100);
+    //Guardamos los números que vayan saliendo
+    $numerosExtraidos[] = $numBombo;
+    echo "<br>Número sacado del bombo: $numBombo<br>";
+    $eliminado = false;
+    foreach ($jugadorNumeros as $jugador => $numero) {
+        if ($numBombo == $numero) {
+            echo "JUGADOR ELIMINADO: $jugador tenía el número $numero <br>";
 
-            }
-              
-            echo "Quedan $jugadoresrestantes jugadores.<br>";
-            echo "-------------------------<br>";
+            //elimino el jugador
+            unset($jugadorNumeros[$jugador]);
+            $eliminado = true;
+            break; //paro para no seguir buscando
         }
-     }
-      $jugadorGanador = key($miarray);  // devuelve la clave del primer elemento del array 
-    echo "¡El jugador $jugadorGanador es el ganador con el número: " . current($miarray) . "!\n";  // current devuelve el valor es decir el numero
+    }
 
+    if (!$eliminado) {
+        echo "No hay ningún jugador con ese número <br>";
+    }
 
+    echo "Quedan " . count($jugadorNumeros) . " jugadores<br>";
+    echo "Números extraídos: ";
+    print_r($numerosExtraidos);
+    echo "<br><br>";
 }
 
-jugar()
+//Solo queda 1 ganador
+$ganador = array_keys($jugadorNumeros)[0];
+$numeroGanador = $jugadorNumeros[$ganador];
+
+echo "<br>GANADOR: $ganador con el número $numeroGanador";
+
+
 ?>
