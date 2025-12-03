@@ -9,6 +9,7 @@ $sumaimpares=0;
 
 for($i=1;$i<=10;$i++){
    $numero=rand(1,100);
+   
    if(($numero%2)==0){
     echo"<br> es par ". $numero;
     $contadorpares++;

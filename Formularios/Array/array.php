@@ -8,9 +8,10 @@
 <body>
     <form action="" method="get">
     <label for="numero">Introducir numeros enteros</label> <br>
-    <input type="number" name="numeros[]">
+    <input type="number" name="numeros[]"><br>
     <br>
     <input type="submit" value="Enviar">
+    
  </form>
 </body>
 </html>
@@ -37,6 +38,7 @@ if($archivo){
     //print_r($array);
 //}
 $archivo=fopen("numeros.txt","r+b");
+
 if($archivo){
      while(($linea=fgets($archivo))!==false){
            $lineas[]=$linea;
@@ -47,7 +49,7 @@ if($archivo){
            }
         }
         fclose($archivo);
-       
+        
     }else{
        echo "Error";
     }

@@ -11,6 +11,7 @@ $arrayasociativo=[];   //$arrayasociativo=array(20)
 for($i=0;$i<10;$i++){
     $nombretemp=$miarraynombres[rand(0,count($miarraynombres)-1)];
     //Elimina el nombre selecionado para no repetir
+    
     //Array_splice elimina(arrayparaeliminar,posicion,nºelementos)
     //Array_search devuelve la posicion del elemento buscado 
     array_splice($miarraynombres,array_search($nombretemp,$miarraynombres),1);
