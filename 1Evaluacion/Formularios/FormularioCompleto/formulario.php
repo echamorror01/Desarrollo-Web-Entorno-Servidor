@@ -16,7 +16,7 @@ if (isset($_GET["accion"]) && $_GET["accion"] == "Grabar") {
     }
 
     $comentarios = isset($_GET["comentarios"]) ? $_GET["comentarios"] : '';
-
+//Creamos un array asociativo 
     $usuario=[
         "Nombre"=>$nombre,
         "Apellidos"=>$apellidos,
@@ -27,8 +27,9 @@ if (isset($_GET["accion"]) && $_GET["accion"] == "Grabar") {
 
     // Convertir array a JSON
     $json = json_encode($usuario, JSON_UNESCAPED_UNICODE);
+   
+    //Escribimos 
     $archivo = fopen("datosEjercicio.txt", "a+b");
-
     if ($archivo) {
         fwrite($archivo, $json . PHP_EOL); // Escribir línea + salto de línea
         fclose($archivo); // Cerrar archivo
@@ -38,8 +39,6 @@ if (isset($_GET["accion"]) && $_GET["accion"] == "Grabar") {
     }
 // Ver el contenido de todo el archivo (leer)
 }elseif(isset($_GET["accion"]) && $_GET["accion"] == "Ver contenido"){
-
- 
 if((leercontenido())){
     echo'<pre>';   //para respetar la estructura
     print_r(leercontenido());
@@ -48,6 +47,8 @@ if((leercontenido())){
 else{
     echo "No se pudo abrir el archivo para lectura.";
 }
+
+
 // Ordenar por nombre  
 }elseif(isset($_GET["accion"]) && $_GET["accion"] == "Ordenar por nombre"){
 if((leercontenido())){
@@ -72,9 +73,6 @@ else{
  }else{
  echo "No se ha recibido ninguna acción ";
 }
-
-
-
 
 
 
