@@ -6,7 +6,7 @@ Métodos:
 llenarArray, llena el array de alumnos con datos.
 mostrarAlumnos, muestra en pantalla cada alumno y su nota media.
 
-5️⃣ Conceptos clave
+ Conceptos clave
 
 $this:	Se refiere al objeto actual, se usa dentro de la clase para acceder a atributos y métodos
 Métodos	Funciones dentro de la clase. Pueden ser de instancia ($this) o estáticos (self::)
