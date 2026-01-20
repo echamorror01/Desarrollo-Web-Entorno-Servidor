@@ -27,12 +27,6 @@ Fin
 
 */
 
- 
-
-
-
-
-// ===== CLASE DvdCine (la que ya tienes) =====
 class DvdCine
 {
     private $titulo;
@@ -103,23 +97,58 @@ $peliculas = [
         "Ciencia ficción", "Bla...", 99)
 ];
 
-// ===== MENÚ =====
-do {
-    echo "\n--- MENÚ DE OPCIONES ---\n";
-    echo "1. Mostrar lista de películas (Título y productora)\n";
-    echo "2. Mostrar la película de mayor duración\n";
-    echo "3. Pedir un género y mostrar títulos\n";
-    echo "4. Fin\n";
-    echo "Elige una opción: ";
 
-    $opcion = trim(fgets(STDIN));
+          
+  //Opcion seleccionada
+  $opcion= $_POST["opcion"] ?? null;
+  $generobuscado= $_POST["genero"] ?? "";
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { font-family: Arial; margin: 30px; }
+        h2 { color: #333; }
+        .resultado { background: #f4f4f4; padding: 15px; margin-top: 20px; }
+    </style>
+</head>
+</head>
+<body>
+    <h2>Menú de películas</h2>
+    <form method="post">
+    <label>Elige una opción:</label><br><br>
+
+    <select name="opcion">
+        <option value="1">Mostrar lista de películas</option>
+        <option value="2">Película de mayor duración</option>
+        <option value="3">Buscar por género</option>
+        <option value="4">Fin</option>
+    </select>
+
+    <br><br>
+
+    <label>Género (solo opción 3):</label><br>
+    <input type="text" name="genero" placeholder="Ciencia ficción, Drama, Animación">
+
+    <br><br>
+    <button type="submit">Aceptar</button>
+</form>
+
+
+<?php
+
+if ($opcion) {
+    echo "<div class='resultado'>";
 
     switch ($opcion) {
 
         case 1:
-            echo "\nLISTA DE PELÍCULAS:\n";
+            echo "<h3>Lista de películas</h3>";
             foreach ($peliculas as $peli) {
-                echo "- " . $peli->getTitulo() . " (" . $peli->getProductora() . ")\n";
+                echo "- <strong>{$peli->getTitulo()}</strong> ({$peli->getProductora()})<br>";
             }
             break;
 
@@ -130,41 +159,33 @@ do {
                     $max = $peli;
                 }
             }
-            echo "\nPELÍCULA MÁS LARGA:\n";
-            echo $max->getTitulo() . " - " . $max->getDuracion() . " minutos\n";
+            echo "<h3>Película más larga</h3>";
+            echo $max->getTitulo() . " - " . $max->getDuracion() . " minutos";
             break;
 
         case 3:
-            echo "\nIntroduce un género: ";
-            $generoBuscado = strtolower(trim(fgets(STDIN)));
-            echo "PELÍCULAS DEL GÉNERO '$generoBuscado':\n";
-
+            echo "<h3>Películas del género: $generobuscado</h3>";
             $encontradas = false;
+
             foreach ($peliculas as $peli) {
-                if (strtolower($peli->getGenero()) == $generoBuscado) {
-                    echo "- " . $peli->getTitulo() . "\n";
+                if (strtolower($peli->getGenero()) == strtolower($generobuscado)) {
+                    echo "- " . $peli->getTitulo() . "<br>";
                     $encontradas = true;
                 }
             }
 
             if (!$encontradas) {
-                echo "No se encontraron películas de ese género.\n";
+                echo "No se encontraron películas de ese género.";
             }
             break;
 
         case 4:
-            echo "\nFin del programa.\n";
+            echo "<h3>Fin del programa</h3>";
             break;
-
-        default:
-            echo "\nOpción no válida.\n";
     }
 
-} while ($opcion != 4);
-
-
-
-
-
-
+    echo "</div>";
+}
 ?>
+</body>
+</html>
