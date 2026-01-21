@@ -5,20 +5,22 @@ Tiene un método abstracto emitirSonido() que muestra un mensaje por pantalla. I
  */
 abstract class Animal
 {
+    private string $nombre;
     private string $sexo;
     private string $habitat;
 
-    public function __construct(string $sexo, string $habitat)
+    public function __construct(string $sexo, string $habitat,string $nombre)
     {
         $this->sexo = $sexo;
         $this->habitat = $habitat;
+        $thid-> nombre= $nombre;
     }
 
-    abstract public function emitirSonido();
+    abstract public function emitirSonido(): string ;
 
-public function __toString() : string {
-$cadena=" <br>Sexo: ->".$this->sexo;
-$cadena.=" <br>Habitat: ->".$this->habitat;
+    public function __toString() : string {
+    $cadena=" <br>Sexo: ->".$this->sexo;
+    $cadena.=" <br>Habitat: ->".$this->habitat;
     return $cadena;
 }
 }

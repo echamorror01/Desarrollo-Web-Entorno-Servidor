@@ -21,6 +21,7 @@ enum sexo: string
     case Hembra = 'H';
    
 }
+
 //Para mostrar uno de los enums:
 $anim = sexo::Hembra;
 print($anim->value);
@@ -38,7 +39,7 @@ $habit = habitat::Tierra;
 print($habit->value);
 echo habitat::Tierra->value;
 
-
+// Incluimos todas las clases creadas
 include "Animal.php";
 include "Mamifero.php";
 include "Perro.php";
