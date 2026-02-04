@@ -1,0 +1,21 @@
+#contenedor{
+    display:flex;
+    justify-content:center;
+}
+table,td,tr{
+    border:1px solid rgb(189, 45, 45);        
+}
+tr:nth-child(even){
+    background: rgb(187, 200, 151);
+}
+tr:nth-child(odd){
+    background: rgb(187, 200, 151);
+}
+
+table {
+   width: 700px;
+}
+caption{
+    font-size: 2em;
+    font-weight: bold;
+}

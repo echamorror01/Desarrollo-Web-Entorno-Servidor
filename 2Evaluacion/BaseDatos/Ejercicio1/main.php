@@ -1,9 +1,10 @@
 <?php
-
+include "conexion.php";
 /* Acceder a la tabla "autor" de la base de datos "biblioteca" y mostrar en pantalla los todos los autores y paìses que se encuentran en  dicha tabla "autor". 
 Para mostrar los autores y sus países, utiliza una tabla html.*/
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,10 +16,12 @@ Para mostrar los autores y sus países, utiliza una tabla html.*/
 <body>
     <div id= "contenedor"></div>
 
+
 <?php
 
-include "conexion.php";
+
 $sql= "SELECT NOMAUT, PAIS FROM autor";
+$resultado= $conexion->query($sql);
 
 ?>
 <table>
@@ -28,8 +31,8 @@ $sql= "SELECT NOMAUT, PAIS FROM autor";
 </tr>
 <?php
 
- $resultado= $conexion->query($sql);
- while($fila = $resultado->fetch()){
+
+ while($fila = $resultado->fetch(PDO::FETCH_ASSOC)){
 
  
 ?>
@@ -39,8 +42,8 @@ $sql= "SELECT NOMAUT, PAIS FROM autor";
     </tr>
     <?php
 }
+ $conexion=null;
     ?>
     </table>
-<?php $conexion=null;?>
 </body>
 </html>
