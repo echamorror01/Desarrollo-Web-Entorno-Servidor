@@ -19,7 +19,7 @@ $conexion=conectarPDO('localhost', 'biblioteca', 'root','');
 $resultado = consultar($conexion, "SELECT DISTINCT PAIS FROM autor");
 
   // Mostrar el select dinámicamente
-
+    mostrarTablaHTML($resultado);
         mostrarSelectHTML($resultado, 'pais');
 
  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
