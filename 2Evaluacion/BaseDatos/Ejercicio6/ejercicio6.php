@@ -6,17 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <div id= "contenedor"></div>
-    <form action="main.php" method="post">
-    <h3>Listado de autores de los autores </h3>
+    <form action="ejercicio6.php" method="post">
+    <h3>Listado de paises</h3>
     <label for="pais">Pais:</label>
-
+    
 <?php
 
 include_once "../bd.php";
 
 $conexion=conectarPDO('localhost', 'biblioteca', 'root','');
-$resultado = consultar($conexion, "SELECT DISTINCT PAIS FROM autor");
+$resultado = consultar($conexion, "SELECT *  FROM autor WHERE PAIS= '");
 
   // Mostrar el select dinámicamente
 
@@ -46,7 +45,11 @@ $resultado = consultar($conexion, "SELECT DISTINCT PAIS FROM autor");
 ?>
 
     <br>
-    <button value="submit">Seleccionar</button>
-</form>
+    <button value="submit">Autores</button>
+
+
+
+    </form>
+    
 </body>
 </html>

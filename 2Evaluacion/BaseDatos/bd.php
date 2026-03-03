@@ -210,7 +210,7 @@ function mostrarSelectHTML($datos, $name = 'pais') {
     }
 
     echo "<select name='$name'>";
-    echo "<option value=''>-- Seleccione un país --</option>";
+    echo "<option value=''>-- Seleccione un autor --</option>";
 
     foreach ($datos as $fila) {
         // Solo hay una columna: PAIS

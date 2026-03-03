@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FFC;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Barra superior fija en la parte de arriba de la página */
+#barrasuperior {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+/* El contenido empieza debajo de la barra fija */
+#contenedor {
+    padding-top: 70px;
+    padding: 70px 15px 15px 15px;
+}
+
+.subtitulo2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Celdas de la tabla */
+table td {
+    text-align: center;
+    border: 1px #000099 dotted;
+    padding: 4px 8px;
+}
+
+/* Cabecera de la tabla */
+table .primera_fila {
+    font-size: 1.2em;
+    text-decoration: underline;
+    background-color: #FC3;
+    font-weight: bold;
+}
+
+/* Celda del botón: sin borde */
+table .bot {
+    padding: 0 5px;
+    border: 0;
+}
+
+/* Celda vacía de cabecera: sin borde */
+table .sin {
+    border: 0;
+}
+
+.centrado {
+    text-align: center;
+}
+
+/* Links de paginación */
+.paginacion {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.paginacion a {
+    margin: 0 5px;
+    padding: 3px 8px;
+    background-color: #FC3;
+    border: 1px solid #000099;
+    text-decoration: none;
+    color: black;
+}
+
+.paginacion a:hover {
+    background-color: #000099;
+    color: white;
+}

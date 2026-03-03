@@ -1,0 +1,148 @@
+/* Reset base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+/* Barra superior fija */
+#barrasuperior {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #1f3a5f, #2d5c8f);
+    color: #ffffff;
+    padding: 14px 22px;
+    z-index: 1000;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+}
+
+#barrasuperior h1 {
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.subtitulo2 {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Contenedor principal */
+#contenedor {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 24px;
+}
+
+#contenedor p {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border-left: 4px solid #3b82f6;
+    background: #eaf3ff;
+    border-radius: 6px;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+td,
+th {
+    text-align: center;
+    border: 1px dotted #b8c2cf;
+    padding: 10px 8px;
+}
+
+.primera_fila {
+    background: #e9f1fb;
+    color: #1f3a5f;
+    font-weight: bold;
+}
+
+tr:nth-child(even) td {
+    background: #fafcff;
+}
+
+tr:hover td {
+    background: #f1f7ff;
+}
+
+/* Formularios y controles */
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 7px 8px;
+    border: 1px solid #c7d2e0;
+    border-radius: 6px;
+    background: #fff;
+}
+
+input[type="submit"],
+button,
+.paginacion a,
+a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 6px 10px;
+    font-size: 13px;
+    line-height: 1.2;
+    border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+input[type="submit"]:hover,
+button:hover,
+.paginacion a:hover,
+a:hover {
+    background-color: #1d4ed8;
+}
+
+input[type="submit"]:active,
+button:active,
+.paginacion a:active,
+a:active {
+    transform: translateY(1px);
+}
+
+/* Paginación */
+.paginacion {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.paginacion a {
+    margin: 0 4px;
+}
+
+/* Botones de acciones dentro de celdas (Editar / Borrar) */
+td.bot {
+    white-space: normal;
+}
+
+td.bot form {
+    display: inline-flex;
+    margin: 2px;
+}
+
+td.bot input[type="submit"] {
+    min-width: 72px;
+}

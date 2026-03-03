@@ -1,0 +1,63 @@
+/* Reset básico para quitar márgenes y paddings por defecto del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Barra superior fija en la parte superior de la pantalla */
+#barrasuperior {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 12px 20px;
+    z-index: 1000;
+}
+
+/* Contenedor principal con espacio arriba para que no lo tape la barra fija */
+#contenedor {
+    padding-top: 80px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Tabla con ancho completo y separación de bordes limpia */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Celdas y cabeceras centradas, con borde punteado */
+th,
+td {
+    text-align: center;
+    border: 1px dotted #555;
+    padding: 10px;
+}
+
+/* Sección de paginación */
+.paginacion {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Enlaces de paginación con aspecto de botón */
+.paginacion a {
+    display: inline-block;
+    padding: 8px 14px;
+    margin: 0 4px;
+    text-decoration: none;
+    background-color: #3498db;
+    color: #ffffff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto al pasar el ratón sobre los enlaces de paginación */
+.paginacion a:hover {
+    background-color: #1f6fa5;
+}
