@@ -139,7 +139,8 @@ class Base
             return 1;
         } catch (Exception $e) {
             return 0;
-        } finally {
+
+            } finally {
             $sentencia = null;
             $conexion = null;
         }

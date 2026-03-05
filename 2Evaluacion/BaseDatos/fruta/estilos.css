@@ -1,0 +1,10 @@
+table { 
+    width: 520px; 
+} 
+
+table th { 
+    padding: 10px; 
+    background-color:#00F; 
+    color: #fff; 
+    text-align: left; 
+}

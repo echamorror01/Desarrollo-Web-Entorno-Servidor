@@ -30,7 +30,7 @@
 					$precio=$comida->getprecioComida();
 					$tipo=$comida->getcodigoTipoComida();
 					$cantidad=1;
-					$usario=$usuario;
+					$usuario=$usuario;
 				}
 				Base::insertar_carrito($codigo,$nombre,$descripcion,$precio,$tipo,$cantidad,$usario);
 			}

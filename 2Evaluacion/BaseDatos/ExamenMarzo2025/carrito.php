@@ -1,4 +1,12 @@
 <?php
+/* Este archivo solo se encarga de mostrar lo que el usuario ha ido eligiendo.
+
+Cálculo de Totales: Recorre los productos del carrito y multiplica Precio * Cantidad para darte el subtotal de cada línea y el total general.
+
+Edición de Cantidades: Puedes cambiar los números en las cajitas de texto.
+
+Botón "Actualizar": Es el que procesa los cambios. Si pones un "0" en la cantidad de un producto 
+y das a actualizar, el sistema llama a la función de la clase Base que borra los ceros, eliminando el producto de tu lista.*/
   session_start();
   if (isset($_SESSION["usuario"])){
     $usuario=$_SESSION["usuario"];

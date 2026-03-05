@@ -7,7 +7,7 @@ if (isset($_GET["del"])) {
     Base::borrarProducto($_GET["codigo"]);
 }
 
-$arrayProductos = Base::getProductos();
+$arrayProductos = Base::getProductos(); //POR QUE SON METODOS ESTATICOS 
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -17,6 +17,7 @@ $arrayProductos = Base::getProductos();
     <link rel="stylesheet" href="../miestilo.css">
 </head>
 <body>
+
 
 <div id="barrasuperior">
     <h1><span class="subtitulo2">1.- FERRETERIA (Borrar) (El clavo)</span></h1>
